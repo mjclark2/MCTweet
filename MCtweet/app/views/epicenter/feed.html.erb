@@ -1,0 +1,10 @@
+<h1><%= current_user.username %>'s feed</h1>
+
+<% @following_tweets.each do |tweet| %>
+<strong><%= tweet.user.name %></strong>
+<%= link_to tweet.user.username, show_user_path(id: tweet.user.id) %>
+<p>
+	<%= tweet.message %>
+</p>
+
+<% end %>
